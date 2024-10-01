@@ -32,8 +32,8 @@ namespace Backend.Services
                 var sql = @"SELECT country.CountryName [Country],
 		                            SUM(city.Population) [Population]	
                               FROM City
-	                            LEFT JOIN State on State.StateId = City.StateId 
-	                            LEFT JOIN Country on Country.CountryId = State.CountryId
+	                            INNER JOIN State on State.StateId = City.StateId 
+	                            INNER JOIN Country on Country.CountryId = State.CountryId
                             WHERE City.Population > 0
                             GROUP BY Country.CountryId";
 
