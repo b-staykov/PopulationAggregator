@@ -29,8 +29,8 @@ namespace Backend.Services
 
             try
             {
-                var sql = @" SELECT country.CountryName [Country],
-		                            SUM(CAST(city.Population AS INTEGER)) [Population]	
+                var sql = @"SELECT country.CountryName [Country],
+		                            SUM(city.Population) [Population]	
                               FROM City
 	                            LEFT JOIN State on State.StateId = City.StateId 
 	                            LEFT JOIN Country on Country.CountryId = State.CountryId
